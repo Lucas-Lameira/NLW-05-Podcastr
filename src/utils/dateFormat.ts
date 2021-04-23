@@ -12,16 +12,16 @@ export function weekDayMonth () {
   return format;
 }
 
-export function dayMonthYear () {
-  const date = new Date()
-  
-  const day = date.getDate();
-  const month = months[date.getMonth()];
-  
-  let year  = String(date.getFullYear()) ; //2021
+export function dayMonthYear (published) {
+  const date = new Date(published);
 
-  year = year[2] + year[3]; //21
+  const day = date.getDate();
+  let month = months[date.getMonth()]; //january
+  month = month.slice(0,3) //jan
+
+  let year  = String(date.getFullYear()) ; //2021
+  year = year.slice(2,3) ; //21  
 
   let format = `${day} ${month} ${year}`;
-  return format;
+  return format
 }

@@ -20,7 +20,7 @@ font-family: 'Lexend', sans-serif;    */
 }
 
 html{
-  font-size: 81.25%; /*13*/  
+  font-size: 56.25%; /*13*/  
   background: black;
 }
 
@@ -33,9 +33,10 @@ html{
 
 @media (min-width: 1080px){
   html{
-    font-size: 93.75%;  /* 15px*/
+    font-size: 62.5%;  /* 10px*/
   }
 }
+
 
 * {
   margin: 0;
@@ -68,4 +69,12 @@ h2{
 
 button{
   cursor: pointer;
+}
+
+ul{
+  list-style: none;
+}
+
+a{
+  text-decoration: none;
 }
