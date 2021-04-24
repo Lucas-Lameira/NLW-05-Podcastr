@@ -6,6 +6,8 @@ import { convertDurationToTImeString } from '../utils/convertDurationToTImeStrin
 import {dayMonthYear} from '../utils/dateFormat';
 import {api} from '../services/api';
 import styles from './home.module.scss';
+import { useContext } from 'react';
+import { PlayerContext } from '../context/PlayerContext';
 
 type Episode = {
   id : string,
@@ -14,6 +16,7 @@ type Episode = {
   publishedAt : string,
   thumbnail : string,
   url : string,
+  duration: number
   durationAsString : string
 }
 
@@ -23,6 +26,8 @@ type HomeProps = {
 }
 
 export default function Home({latestEpisodes, allEpisodes}: HomeProps) {
+  const {play} = useContext(PlayerContext);
+
   return (
     <div className={styles.homepage}>
       <section className={styles.latestEpisodes}>
@@ -49,7 +54,7 @@ export default function Home({latestEpisodes, allEpisodes}: HomeProps) {
                   <span>{episode.durationAsString}</span>
                 </div>
 
-                <button>
+                <button onClick={ () => play(episode)}>
                   <img src="/play-green.svg" alt="green play button"/>
                 </button>
               </li>
@@ -128,6 +133,7 @@ export const getStaticProps: GetStaticProps = async () => {
       publishedAt: dayMonthYear(episode.published_at),
       thumbnail: episode.thumbnail,      
       url: episode.file.url,
+      duration: Number(episode.file.duration),
       durationAsString: convertDurationToTImeString(Number(episode.file.duration))
     }
   })
