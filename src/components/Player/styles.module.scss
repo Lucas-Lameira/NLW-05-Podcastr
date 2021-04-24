@@ -73,7 +73,7 @@
   span{ 
     display: inline-block;
     width: 4rem;
-    text-align: center;
+    text-align: center;    
   }
   .slider{
     flex: 1;
@@ -83,7 +83,6 @@
       background: var(--purple-300);
       border-radius: 2px;
     }
-
   }
 }
 
@@ -107,6 +106,14 @@
 
     &:hover:not(:disabled){
       filter: brightness(0.6);
+    }
+
+    &.isActive{
+      filter: invert(0.35) sepia(1) saturate(3) hue-rotate(100deg);
+    }
+
+    &.isActive{
+      filter: brightness(0.6) invert(0.35) sepia(1) saturate(3) hue-rotate(100deg);
     }
 
     &.playButton{
