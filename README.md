@@ -49,10 +49,10 @@ yarn dev
 Entre o endereço, **http://localhost:3000**, no navegador.
 
 # Milha Extra - podcastr 2.0
-[ &nbsp;] Responsividade <br>
-[ &nbsp;] Criar versão PWA <br>
-[ &nbsp;] Tema Dark <br>
-[&nbsp; ] Desktop com Electron <br>
+- [ ] Responsividade <br>
+- [ ] Criar versão PWA <br>
+- [ ] Tema Dark <br>
+- [ ] Desktop com Electron <br>
 
 
 
